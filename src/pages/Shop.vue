@@ -5,13 +5,21 @@
             <p>Счастье: {{ store.happiness }}</p>
         </div>
         <div class="list">
-            <div v-for="(btn,i) in info" :key="btn.title" class="card">
+            <div class="card">
                 <div class="img">
-                    <img :src="`/${btn.img}`" alt="">
+                    <img src="/flower.png" alt="">
                 </div>
-                 <h4>{{ btn.title }}</h4>
-                 <p>{{ btn.price }}$</p>
-                <button @click="handleBuy(i)">Купить</button>
+                <h4>Цветок</h4>
+                <p>100$</p>
+                <button @click="handleBuy(0)">Купить</button>
+            </div>
+            <div class="card">
+                <div class="img">
+                    <img src="/gramofon.png" alt="">
+                </div>
+                <h4>Цветок</h4>
+                <p>100$</p>
+                <button @click="handleBuy(1)">Купить</button>
             </div>
 
         </div>
@@ -25,8 +33,8 @@ import { useCounterStore } from "../store";
 
 const store = useCounterStore()
 
-function handleBuy(i){
-    if(store.happiness < info[i].price) return
+function handleBuy(i) {
+    if (store.happiness < info[i].price) return
     store.boughtItems.push(info[i])
     store.happiness -= info[i].price
 }
@@ -36,22 +44,23 @@ const router = useRouter()
 </script>
 
 <style scoped>
-
 .info {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
+
 .section {
     padding: 20px;
 }
+
 .list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.card{
+.card {
     width: 100px;
     height: 100px;
     display: flex;
@@ -64,7 +73,7 @@ const router = useRouter()
     max-width: 100%;
 }
 
-.img > img {
+.img>img {
     width: 100%;
     height: 100px;
 }
