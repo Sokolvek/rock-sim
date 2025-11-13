@@ -1,0 +1,14 @@
+[
+{
+    "title": "Цветок",
+    "price": 100,
+    "img": "flower.png",
+    "gives": 2
+},
+{
+    "title":"Граммофон",
+    "price": 200,
+    "img": "gramofon.png",
+    "gives":5
+}
+]
